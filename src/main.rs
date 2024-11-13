@@ -112,9 +112,9 @@ fn build_ui(app: &Application) {
             let timer_weak = Rc::downgrade(&timer_clone);
             glib::timeout_add_local(Duration::from_secs(1), move || {
                 if let Some(timer) = timer_weak.upgrade() {
-                    return glib::Continue(timer.borrow_mut().tick());
+                    return Continue(timer.borrow_mut().tick());
                 }
-                glib::Continue(false)
+                Continue(false)
             });
         }
     });
