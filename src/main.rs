@@ -1,9 +1,9 @@
 use gtk4::prelude::*;
 use gtk4::{Application, ApplicationWindow, Box, Button, Label, Orientation};
-use libadwaita as adw;
 use std::time::Duration;
 use std::cell::RefCell;
 use std::rc::Rc;
+use glib::ControlFlow::Continue;
 
 const APP_ID: &str = "org.example.GnomePomodoro";
 const WORK_TIME: u32 = 25 * 60; // 25 minutes in seconds
@@ -80,7 +80,10 @@ fn build_ui(app: &Application) {
 
     // Create a vertical box
     let vbox = Box::new(Orientation::Vertical, 10);
-    vbox.set_margin_all(10);
+    vbox.set_margin_start(10);
+    vbox.set_margin_end(10);
+    vbox.set_margin_top(10);
+    vbox.set_margin_bottom(10);
 
     // Create the timer label
     let timer_label = Label::new(None);
