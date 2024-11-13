@@ -119,6 +119,7 @@ fn build_ui(app: &Application) {
                     }
                 } else {
                     glib::ControlFlow::Break
+                }
             });
         }
     });
