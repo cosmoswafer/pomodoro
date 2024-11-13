@@ -87,7 +87,7 @@ fn build_ui(app: &Application) {
 
     // Create the timer label
     let timer_label = Label::new(None);
-    timer_label.set_markup("<span font='38'>");
+    timer_label.set_markup("<span font='38'>00:00</span>");
 
     // Create the timer instance
     let timer = Rc::new(RefCell::new(PomodoroTimer::new(timer_label.clone())));
